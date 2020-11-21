@@ -54,7 +54,8 @@ class WGraph_Algo_Test {
 		weighted_graph gc= ga.copy();
 		System.out.println(g.toString());
 		System.out.println(gc.toString());
-		assertTrue(g.equals(gc));
+		//assertTrue(g.equals(gc));
+		assertEquals(g, gc);
 	}
 	
 	/**
@@ -94,19 +95,19 @@ class WGraph_Algo_Test {
 		assertEquals(5, ga.shortestPath(8, 1).size());
 		g.removeEdge(2, 9);
 		assertEquals(-1, ga.shortestPathDist(4, 9));	//Path between 2 node that in the graph and not connected.
-		assertEquals(null, ga.shortestPath(4, 9));
+		assertNull(ga.shortestPath(4, 9));
 		assertEquals(-1, ga.shortestPathDist(9, 4));	//Path between 2 node that in the graph and not connected.
-		assertEquals(null, ga.shortestPath(9, 4));
+		assertNull(ga.shortestPath(9, 4));
 		assertEquals(-1, ga.shortestPathDist(6, 12));	//Path between node in the graph to node that not in the graph.
-		assertEquals(null, ga.shortestPath(6, 12));
+		assertNull(ga.shortestPath(6, 12));
 		assertEquals(-1, ga.shortestPathDist(13, 1));	//Path between node that not in the graph to node in the graph.
-		assertEquals(null, ga.shortestPath(13, 1));
+		assertNull(ga.shortestPath(13, 1));
 		assertEquals(-1, ga.shortestPathDist(13, 11));	//Path between 2 node that not in the graph and connected.
-		assertEquals(null, ga.shortestPath(13, 11));
+		assertNull(ga.shortestPath(13, 11));
 		assertEquals(-1, ga.shortestPathDist(3, 3));	//Path between node in the graph to himself.
 		assertEquals(1, ga.shortestPath(3, 3).size());
 		assertEquals(-1, ga.shortestPathDist(15, 15));	//Path between node that not in the graph to himself.
-		assertEquals(null, ga.shortestPath(15, 15));
+		assertNull(ga.shortestPath(15, 15));
 	}
 	
 	/**

@@ -40,8 +40,8 @@ class WGraph_DS_Test {
 	 */
 	@Test
 	public void nodes() {
-		assertEquals(null, g.getNode(12));		//A node that isn't in the graph.
-		assertNotEquals(null, g.getNode(4));	//A node that is in the graph.
+		assertNull(g.getNode(12));		//A node that isn't in the graph.
+		assertNotNull(g.getNode(4));	//A node that is in the graph.
 		g.addNode(5);							//Add node which there is in the graph.
 		assertEquals(5, g.nodeSize());
 		assertEquals(11, g.getMC());
@@ -107,7 +107,7 @@ class WGraph_DS_Test {
 		assertEquals(2, g.edgeSize());
 		assertEquals(4, g.nodeSize());
 		n= g.removeNode(12);			//Remove a node that isn't in the graph.
-		assertEquals(null, n);
+		assertNull(n);
 		assertEquals(2, g.edgeSize());
 		assertEquals(4, g.nodeSize());
 		assertEquals(16, g.getMC());
